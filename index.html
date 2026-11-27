@@ -1,0 +1,142 @@
+HTML
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#641d38">
+<title>HEMA32 | Hematology</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,sans-serif;background:#f8f3f5;color:#33232a}
+header{background:#641d38;color:white;padding:28px 20px;border-radius:0 0 25px 25px}
+header h1{font-size:30px;margin:5px 0}
+header p{font-size:13px;line-height:1.7}
+.coin{background:#fff1c9;color:#694500;padding:10px 15px;border-radius:15px;display:inline-block;font-weight:bold}
+nav{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;padding:15px}
+nav button{border:0;border-radius:12px;padding:12px 5px;background:white;color:#641d38;font-weight:bold;box-shadow:0 2px 7px #ddd;font-size:12px}
+main{padding:10px 16px}
+section{display:none}
+section.active{display:block}
+h2{color:#641d38}
+.card{background:white;padding:17px;margin:12px 0;border-radius:16px;box-shadow:0 2px 8px #eadde2}
+.card h3{color:#641d38;margin-top:0}
+.small{font-size:13px;color:#78636d;line-height:1.7}
+footer{text-align:center;padding:25px;color:#987b89;font-size:12px}
+</style>
+</head>
+<body>
+
+<header>
+<p>OMDURMAN AHLIA UNIVERSITY</p>
+<h1>🩸 HEMA32</h1>
+<p>College of Medical Laboratory Sciences<br>
+Department of Hematology<br>Fourth Year | Batch 32</p>
+<div class="coin">🪙 Gold Coins: <span id="coins">0</span></div>
+</header>
+
+<nav>
+<button onclick="show('home')">🏠 Home</button>
+<button onclick="show('lectures')">📚 Lectures</button>
+<button onclick="show('labs')">🔬 Practical Labs</button>
+<button onclick="show('cases')">🩺 Cases</button>
+<button onclick="show('atlas')">🔬 Cell Atlas</button>
+<button onclick="show('story')">🎓 Dr. Story</button>
+<button onclick="show('references')">📖 References</button>
+</nav>
+
+<main>
+
+<section id="home" class="active">
+<h2>Welcome to HEMA32 ❤️</h2>
+<div class="card">
+<h3>Your Hematology Study Companion</h3>
+<p class="small">Learn, practice and explore the fascinating world of blood science.</p>
+</div>
+<div class="card">
+<h3>📚 Two Academic Semesters</h3>
+<p class="small">Organized lectures and subjects for your fourth year.</p>
+</div>
+<div class="card">
+<h3>🩸 Learn Hematology</h3>
+<p class="small">Lectures • Laboratory • Clinical Cases • Cell Atlas</p>
+</div>
+</section>
+
+<section id="lectures">
+<h2>📚 Lectures</h2>
+<div class="card">
+<h3>Semester One</h3>
+<p class="small">Subjects and original university lectures will be added here.</p>
+</div>
+<div class="card">
+<h3>Semester Two</h3>
+<p class="small">Your next semester lectures will be added here.</p>
+</div>
+</section>
+
+<section id="labs">
+<h2>🔬 Practical Laboratory</h2>
+<div class="card">
+<h3>Hematology Practical Labs</h3>
+<p class="small">Each experiment will include Aim, Principle, Method, Materials, Results and Discussion.</p>
+</div>
+</section>
+
+<section id="cases">
+<h2>🩺 Case Studies</h2>
+<div class="card">
+<h3>Hematology Clinical Cases</h3>
+<p class="small">Anemia cases, blood disorders, laboratory findings and blood film images.</p>
+</div>
+</section>
+
+<section id="atlas">
+<h2>🔬 Cell Atlas</h2>
+<div class="card">
+<h3>Blood Cell Library</h3>
+<p class="small">Normal and abnormal blood cells, cell identification and associated diseases.</p>
+</div>
+</section>
+
+<section id="story">
+<h2>🎓 Dr. Story</h2>
+<div class="card">
+<h3>Learn with Stories!</h3>
+<p class="small">Simple, funny explanations and illustrations to help you remember difficult hematology concepts.</p>
+</div>
+</section>
+
+<section id="references">
+<h2>📖 References</h2>
+<div class="card">
+<h3>Hematology Books</h3>
+<p class="small">
+• Hoffbrand's Essential Haematology<br>
+• Dacie and Lewis Practical Haematology<br>
+• Practical Manual of Hematology<br>
+• Clinical Hematology<br>
+• Essentials of Blood Banking<br>
+• Modern Blood Banking
+</p>
+</div>
+</section>
+
+</main>
+
+<footer>
+HEMA32 | Omdurman Ahlia University<br>
+Made for Hematology Students ❤️
+</footer>
+
+<script>
+let coins=Number(localStorage.getItem('hemaCoins')||0);
+document.getElementById('coins').textContent=coins;
+function show(id){
+document.querySelectorAll('main section').forEach(s=>s.classList.remove('active'));
+document.getElementById(id).classList.add('active');
+}
+</script>
+</body>
+</html>
